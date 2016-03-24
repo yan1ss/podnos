@@ -1,0 +1,44 @@
+<HTML>
+<HEAD>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script>
+//функция подсчета
+function Calc(form)
+{
+	if ( form.input1.value == "" || form.input2.value == "" || form.input1.value < 0 || form.input2.value < 0 || form.input1.value > 6000 || form.input2.value > 6000 )
+        {
+                alert ( "Заполните поля правильно!" );
+        }
+	else {
+	var A = form.input1.value;
+	var B = form.input2.value;
+	var A2 = A/6.4*6;
+	var B2 = B/6.4*6;
+	var C = B2-A2;
+	alert ("Прицел: "+(C+3000));
+	}
+}
+</script>
+</HEAD>
+<BODY>
+<CENTER>
+<h1 class="big">2Б14 калькулятор</h1>
+<form class="form-container" method="post" name="form1" onsubmit="Calc(this)">
+<div class="form-title">Направление на точку наводки</div>
+<INPUT class="form-field" type="text" SIZE="4" name="input1" id="input1" maxlength="4">
+<BR>
+<div class="form-title">Направление на цель</div>
+<INPUT class="form-field" type="text" SIZE="4" name="input2" id="input2" maxlength="4">
+<BR><BR>
+
+<INPUT type="submit" class="submit-button" value="Подсчитать">
+<BR>
+</form>
+
+
+
+
+</CENTER>
+</BODY>
+</HTML>
